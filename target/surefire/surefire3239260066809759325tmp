@@ -1,0 +1,5 @@
+#surefire
+#Wed Feb 19 19:16:23 CET 2014
+user.dir=/home/ruben/workspace/sts/SpringRestfullWSTest
+localRepository=/home/ruben/.m2/repository
+basedir=/home/ruben/workspace/sts/SpringRestfullWSTest

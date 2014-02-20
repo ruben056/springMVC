@@ -1,0 +1,11 @@
+SpringRestfullWSTest
+====================
+Spring restfull service. supporting xml and json return values.
+
+How to use
+==========
+Start server: mvn test
+curl -v -H "Accept: application/xml" http://localhost:8080/SpringRestfullWSTest/contact/listdata
+curl -v -H "Accept: application/json" http://localhost:8080/SpringRestfullWSTest/contact/listdata
+
+
