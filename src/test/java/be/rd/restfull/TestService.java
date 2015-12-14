@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import be.rd.beans.Contact;
 import be.rd.beans.Contacts;
 
-@ContextConfiguration("classpath:spring/rest-client-config.xml")
+@ContextConfiguration()
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestService {
 
