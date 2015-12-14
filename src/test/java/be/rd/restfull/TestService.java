@@ -20,7 +20,6 @@ public class TestService {
 	private static final String URL_CREATE_CONTACT ="http://localhost:8080/SpringRestfullWSTest/contact/";
 	private static final String URL_UPDATE_CONTACT ="http://localhost:8080/SpringRestfullWSTest/contact/{id}";
 	private static final String URL_DELETE_CONTACT ="http://localhost:8080/SpringRestfullWSTest/contact/{id}";
-
 	
 	@Autowired
 	private RestTemplate template;
