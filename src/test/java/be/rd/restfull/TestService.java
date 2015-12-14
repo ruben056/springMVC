@@ -2,12 +2,17 @@ package be.rd.restfull;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.RestTemplate;
 
 import be.rd.beans.Contact;
 import be.rd.beans.Contacts;
 
+@ContextConfiguration("classpath:spring/rest-client-config.xml")
+@RunWith(SpringJUnit4ClassRunner.class)
 public class TestService {
 
 	private static final String URL_GET_ALL_CONTACTS = "http://localhost:8080/SpringRestfullWSTest/contact/listdata";
@@ -16,12 +21,12 @@ public class TestService {
 	private static final String URL_UPDATE_CONTACT ="http://localhost:8080/SpringRestfullWSTest/contact/{id}";
 	private static final String URL_DELETE_CONTACT ="http://localhost:8080/SpringRestfullWSTest/contact/{id}";
 
-			
+	
+	@Autowired
+	private RestTemplate template;
+	
 	@Test
-	public void testRestfullWS(){
-		ClassPathXmlApplicationContext appCtx = new ClassPathXmlApplicationContext("classpath:spring/rest-client-config.xml");
-		RestTemplate template = appCtx.getBean("restTemplate", RestTemplate.class);
-		
+	public void testRestfullWS(){		
 		// retrieve
 		Contacts allContacts = template.getForObject(URL_GET_ALL_CONTACTS, Contacts.class);
 		listContacts(allContacts);
@@ -50,9 +55,6 @@ public class TestService {
 		URL_CREATE_CONTACT, contactNew, Contact.class);
 		
 		System.out.println("Contact created successfully: " + contactNew);
-
-		
-		appCtx.close();
 	}
 
 	private static void listContacts(Contacts contacts) {
