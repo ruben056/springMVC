@@ -131,11 +131,8 @@
 			<artifactId>spring-oxm</artifactId>
 			<version>${spring-framework.version}</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-lgpl</artifactId>
-			<version>1.9.2</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.codehaus.jackson</groupId> <artifactId>jackson-core-lgpl</artifactId> 
+			<version>1.9.2</version> </dependency> -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
@@ -178,4 +175,13 @@
 		</dependency>
 
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.3.1-SNAPSHOT</version>
+			</plugin>
+		</plugins>
+	</build>
 </project>

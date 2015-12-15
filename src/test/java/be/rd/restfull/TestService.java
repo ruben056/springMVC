@@ -15,11 +15,11 @@ import be.rd.beans.Contacts;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestService {
 
-	private static final String URL_GET_ALL_CONTACTS = "http://localhost:8080/SpringRestfullWSTest/contact/listdata";
-	private static final String URL_GET_CONTACT_BY_ID ="http://localhost:8080/SpringRestfullWSTest/contact/{id}";
-	private static final String URL_CREATE_CONTACT ="http://localhost:8080/SpringRestfullWSTest/contact/";
-	private static final String URL_UPDATE_CONTACT ="http://localhost:8080/SpringRestfullWSTest/contact/{id}";
-	private static final String URL_DELETE_CONTACT ="http://localhost:8080/SpringRestfullWSTest/contact/{id}";
+	private static final String URL_GET_ALL_CONTACTS = "http://localhost:8080/contact/listdata";
+	private static final String URL_GET_CONTACT_BY_ID ="http://localhost:8080/contact/{id}";
+	private static final String URL_CREATE_CONTACT ="http://localhost:8080/contact/";
+	private static final String URL_UPDATE_CONTACT ="http://localhost:8080/contact/{id}";
+	private static final String URL_DELETE_CONTACT ="http://localhost:8080/contact/{id}";
 	
 	@Autowired
 	private RestTemplate template;
