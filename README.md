@@ -25,7 +25,7 @@ $ curl -u remote:remote 	-v -H "Accept: application/json" http://localhost:8080/
 $ curl -u remote:remote -v -H "Accept: application/xml" http://localhost:8080/contact/listdata
 ```
 ```shell
-$ curl -u remote:remote 	-v -H "Accept: application/json" http://localhost:8080/contact/listdata  
+$ curl -u remote:remote -v -H "Accept: application/json" http://localhost:8080/contact/listdata  
 ```
 
 ### Test using Spring Resttemplate
