@@ -1,6 +1,8 @@
 # SpringRestfullWSTest
 
-Spring restfull webservice supporting xml and json as response body.
+## What
+
+Spring restfull webservice supporting both XML and JSON as response body.
 
 ## How to use
 
