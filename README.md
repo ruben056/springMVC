@@ -14,7 +14,7 @@ Spring restfull webservice supporting both XML and JSON as response body.
 $ mvn jetty:run
 ```
 
-### Test using **curl**
+### Test using _Curl_
  * when running on tomcat or you chose `run on server`
 ```shell
 $ curl -u remote:remote -v -H "Accept: application/xml" http://localhost:8080/SpringRestfullWSTest/contact/listdata
@@ -30,7 +30,7 @@ $ curl -u remote:remote -v -H "Accept: application/xml" http://localhost:8080/co
 $ curl -u remote:remote -v -H "Accept: application/json" http://localhost:8080/contact/listdata  
 ```
 
-### Test using Spring Resttemplate
+### Test using Springs _Resttemplate_
 * just run the maven test:
 ```shell
 $	mvn test
