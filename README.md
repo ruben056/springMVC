@@ -18,7 +18,7 @@ $ mvn jetty:run
 $ curl -u remote:remote -v -H "Accept: application/xml" http://localhost:8080/SpringRestfullWSTest/contact/listdata
 ```
 ```shell
-$ curl -u remote:remote 	-v -H "Accept: application/json" http://localhost:8080/SpringRestfullWSTest/contact/listdata
+$ curl -u remote:remote -v -H "Accept: application/json" http://localhost:8080/SpringRestfullWSTest/contact/listdata
 ```
  * when runnin on jetty via maven the context root is not mentioned in the url:
 ```shell
