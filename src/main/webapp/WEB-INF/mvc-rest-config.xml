@@ -20,9 +20,8 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
-	
-	<context:component-scan
-		base-package="be.rd.restful.controller" />
+
+	<context:component-scan base-package="be.rd.restful.controller" />
 	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
 		<property name="mappingLocation" value="classpath:oxm-mapping.xml" />
 	</bean>

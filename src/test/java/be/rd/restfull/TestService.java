@@ -15,11 +15,13 @@ import be.rd.beans.Contacts;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestService {
 
-	private static final String URL_GET_ALL_CONTACTS = "http://localhost:8080/contact/listdata";
-	private static final String URL_GET_CONTACT_BY_ID ="http://localhost:8080/contact/{id}";
-	private static final String URL_CREATE_CONTACT ="http://localhost:8080/contact/";
-	private static final String URL_UPDATE_CONTACT ="http://localhost:8080/contact/{id}";
-	private static final String URL_DELETE_CONTACT ="http://localhost:8080/contact/{id}";
+	private static final String HOST_URL = "http://localhost:8080";
+	private static final String REST_DISPATCHER_SERVLET_PREFIX = "/rest";	
+	private static final String URL_GET_ALL_CONTACTS = HOST_URL + REST_DISPATCHER_SERVLET_PREFIX + "/contact/listdata";
+	private static final String URL_GET_CONTACT_BY_ID = HOST_URL + REST_DISPATCHER_SERVLET_PREFIX + "/contact/{id}";
+	private static final String URL_CREATE_CONTACT = HOST_URL + REST_DISPATCHER_SERVLET_PREFIX + "/contact/";
+	private static final String URL_UPDATE_CONTACT = HOST_URL + REST_DISPATCHER_SERVLET_PREFIX + "/contact/{id}";
+	private static final String URL_DELETE_CONTACT = HOST_URL + REST_DISPATCHER_SERVLET_PREFIX + "/contact/{id}";
 	
 	@Autowired
 	private RestTemplate template;
