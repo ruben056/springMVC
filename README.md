@@ -60,3 +60,8 @@ $ curl -u remote:remote -v -H "Accept: application/json" http://localhost:8080/c
 $	mvn test
 ```
   _(restart server for each tests, since delete occurs in db ...)_
+
+  
+### Test the view 
+The url is : http://localhost:8080/view/contact/showMessage
+No automated test yet.  
