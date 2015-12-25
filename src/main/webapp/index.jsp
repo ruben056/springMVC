@@ -11,7 +11,7 @@
 		<title>Welcome</title>
 	</head> 
 	<body>
-		<c:url value="/contact/listdata" var="messageUrl" />
+		<c:url value="/rest/contact/listdata" var="messageUrl" />
 		<a href="${messageUrl}">Click to enter</a>
 	</body>
 </html>

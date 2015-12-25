@@ -18,9 +18,9 @@ import be.rd.service.IContactService;
 
 @Controller
 @RequestMapping(value = "/contact")
-public class ContactController {
+public class ContactRestCtrl {
 
-	final Logger logger = LoggerFactory.getLogger(ContactController.class);
+	final Logger logger = LoggerFactory.getLogger(ContactRestCtrl.class);
 	@Autowired
 	private IContactService contactService;
 
