@@ -1,4 +1,4 @@
-# SpringRestfullWSTest
+# SpringWSTest
 
 ## What
 
