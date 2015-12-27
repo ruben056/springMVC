@@ -6,7 +6,7 @@ Spring mvc application with both rest and mvc controllers
 
 ## 'Architecture'
 
-Spring applicationwith 2 dispatcher servlets:
+Spring application with 2 dispatcher servlets:
  * restDispatcherSerlet: dispatches all /rest/* requests
   * config : *mvc-rest-config.xml*
  * viewDispatcherSerlet: dispatches all /view/* requests
@@ -17,8 +17,7 @@ Some basic http security is present from wayback for the restfull  urls.
 **TODO:** Must be completely redone
 
 ## Views
-Currently using .jsp. Should convert to .jspx but had error parsing when a just changed the extension.
-Did not had time ... need to modify content so it adheres to xml standards...
+Now using jspx for the view templatest and the defaultViewResolver of spring.
 
 ## How to 'use'
 
@@ -61,7 +60,8 @@ $	mvn test
 ```
   _(restart server for each tests, since delete occurs in db ...)_
 
-  
-### Test the view 
-The url is : http://localhost:8080/view/contact/showMessage
+### Test the view
+The urls :
+* http://localhost:8080/view/msg  
+* http://localhost:8080/view/contact/listdata :
 No automated test yet.  
