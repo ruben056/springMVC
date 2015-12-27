@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
@@ -8,7 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<mvc:annotation-driven />
-	<mvc:resources location="/resources/" mapping="/resources/**" />
+	<context:component-scan base-package="be.rd.view.controller" />
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -16,7 +17,19 @@
 		<property name="suffix" value=".jspx" />
 	</bean>
 
-	<context:component-scan base-package="be.rd.view.controller" />
+	<mvc:resources location="/,/WEB-INF/resources/,classpath:/META-INF/web-resources/" mapping="/resources/**"/>
+	<mvc:default-servlet-handler/>
+	
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
+	</mvc:interceptors>
+
+	<bean
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+		id="messageSource" p:basenames="WEB-INF/i18n/messages,WEB-INF/i18n/application"
+		p:fallbackToSystemLocale="false" />
+	<bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver"
+		id="localeResolver" p:cookieName="locale" />
 
 
 

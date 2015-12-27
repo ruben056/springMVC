@@ -62,6 +62,7 @@ $	mvn test
 
 ### Test the view
 The urls :
-* http://localhost:8080/view/msg  
+* http://localhost:8080/view/msg
+* http://localhost:8080/view/msg/{msg}   
 * http://localhost:8080/view/contact/listdata :
 No automated test yet.  
