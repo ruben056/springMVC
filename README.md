@@ -76,8 +76,6 @@ $	mvn test
   _(restart server for each tests, since delete occurs in db ...)_
 
 ### Test the view
-The urls :
-* http://localhost:8080/view/msg
-* http://localhost:8080/view/msg/{msg}   
-* http://localhost:8080/view/contact/listdata :
+Go to following page and you'll get an overview of the availabl endpoints:
+* http://localhost:8080/index.jsp
 No automated test yet.  
