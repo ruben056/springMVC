@@ -22,6 +22,7 @@
 	
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
+		<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor" p:paramName="theme"/>
 	</mvc:interceptors>
 
 	<bean
@@ -32,5 +33,9 @@
 		id="localeResolver" p:cookieName="locale" />
 
 
+	<bean class="org.springframework.ui.context.support.ResourceBundleThemeSource"
+		id="themeSource"/>
+	<bean class="org.springframework.web.servlet.theme.CookieThemeResolver"
+		id="themeResolver" p:cookieName="theme" p:defaultThemeName="standard_theme"/>
 
 </beans>

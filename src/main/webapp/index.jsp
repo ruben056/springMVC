@@ -39,6 +39,14 @@
 					<c:url value="/view/contact/listdata?lang=" var="mvcContactListUrlReset" />
 					<a href="${mvcContactListUrlReset}">/view/contact/listdata?lang=</a>
 				</li>
+				<li>
+					<c:url value="/view/contact/listdata?theme=dev_theme" var="mvcContactListUrlDevTheme" />
+					<a href="${mvcContactListUrlDevTheme}">/view/contact/listdata?theme=dev_theme</a>
+				</li>
+				<li>
+					<c:url value="/view/contact/listdata?theme=standard_theme" var="mvcContactListUrlStdTheme" />
+					<a href="${mvcContactListUrlStdTheme}">/view/contact/listdata?theme=standard_theme</a>
+				</li>
 			</ul>
 		</li>
 		<li>
