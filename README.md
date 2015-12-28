@@ -11,13 +11,28 @@ Spring application with 2 dispatcher servlets:
   * config : *mvc-rest-config.xml*
  * viewDispatcherSerlet: dispatches all /view/* requests
   * config : *mvc-view-config.xml*
+ * tilesDispatcherSerlet: dispatches all /tiles/* requests
+  * config : *mvc-tiles-config.xml*
 
 ## Security
 Some basic http security is present from wayback for the restfull  urls.
 **TODO:** Must be completely redone
 
+## Validation
+Todo Describe (jsr 303 annotations on entity and controller operations)
+
+## I18n
+TODO describe (i18nReloadableResourceBundle as messageSource)
+
+# Theming
+TODO describe
+
 ## Views
-Now using jspx for the view templatest and the defaultViewResolver of spring.
+* view/*
+ * uses `InternalResourceViewResolver`
+
+* tiles/*
+ * uses view `UrlBasedViewResolver` with the `TilesView` as viewClass
 
 ## How to 'use'
 

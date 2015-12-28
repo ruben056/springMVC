@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>Welcome</title>
-	</head> 
+	</head>
 	<body>
 	<ul>
 		<li>
@@ -27,6 +27,10 @@
 		<li>
 			<h3>MVC Services:</h3>
 			<ul>
+        <li>
+					<c:url value="/view/msg/Hello-world" var="mvcShowMessageUrl" />
+					<a href="${mvcShowMessageUrl}">/view/msg/Hello-world</a>
+				</li>
 				<li>
 					<c:url value="/view/contact/listdata" var="mvcContactListUrl" />
 					<a href="${mvcContactListUrl}">/view/contact/listdata</a>
@@ -75,10 +79,10 @@
 				<li>
 					<c:url value="/tiles/contact/1" var="tilesContactDetailUrl" />
 					<a href="${tilesContactDetailUrl}">/tiles/contact/1</a>
-				</li>				
+				</li>
 			</ul>
 		</li>
-		
+
 		<li>
 			<h3>Test exposure of static resources:</h3>
 			<ul>
