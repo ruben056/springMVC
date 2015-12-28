@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration
+2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition extends="default" name="contact/contactlist">
+		<put-attribute name="body" value="/WEB-INF/tiles/contact/contactlist.jspx" />
+	</definition>
+	<definition extends="default" name="contact/contactdetail">
+		<put-attribute name="body" value="/WEB-INF/tiles/contact/contactdetail.jspx" />
+	</definition>
+	<definition extends="default" name="contact/contactedit">
+		<put-attribute name="body" value="/WEB-INF/tiles/contact/contactedit.jspx" />
+	</definition>
+</tiles-definitions>

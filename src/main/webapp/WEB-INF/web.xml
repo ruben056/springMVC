@@ -38,7 +38,7 @@
     </servlet-mapping>
     
     <!--
-		Servlet that dispatches request for views
+		Servlet that dispatches request for mvc views with default internal viewresolver
 	-->
     <servlet>
         <servlet-name>viewDispatcher</servlet-name>
@@ -54,6 +54,23 @@
         <url-pattern>/view/*</url-pattern>
     </servlet-mapping>
 
+<!--
+		Servlet that dispatches request for views resolved with tiles view resolver
+	-->
+	<servlet>
+        <servlet-name>tilesDispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/mvc-tiles-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tilesDispatcher</servlet-name>
+        <url-pattern>/tiles/*</url-pattern>
+    </servlet-mapping>
+    
 
 	<!-- Spring MVC filters -->
 <!-- 	used to specify encoding of the request -->

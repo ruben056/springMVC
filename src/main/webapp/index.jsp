@@ -50,6 +50,36 @@
 			</ul>
 		</li>
 		<li>
+			<h3>MVC Services using tiles for templating:</h3>
+			<ul>
+				<li>
+					<c:url value="/tiles/contact/listdata" var="tilesContactListUrl" />
+					<a href="${tilesContactListUrl}">/tiles/contact/listdata</a>
+				</li>
+				<li>
+					<c:url value="/tiles/contact/listdata?lang=nl_BE" var="tilesContactListUrlNlBe" />
+					<a href="${tilesContactListUrlNlBe}">/tiles/contact/listdata?lang=nl_BE</a>
+				</li>
+				<li>
+					<c:url value="/tiles/contact/listdata?lang=" var="tilesContactListUrlReset" />
+					<a href="${tilesContactListUrlReset}">/tiles/contact/listdata?lang=</a>
+				</li>
+				<li>
+					<c:url value="/tiles/contact/listdata?theme=dev_theme" var="tilesContactListUrlDevTheme" />
+					<a href="${tilesContactListUrlDevTheme}">/tiles/contact/listdata?theme=dev_theme</a>
+				</li>
+				<li>
+					<c:url value="/tiles/contact/listdata?theme=standard_theme" var="tilesContactListUrlStdTheme" />
+					<a href="${tilesContactListUrlStdTheme}">/tiles/contact/listdata?theme=standard_theme</a>
+				</li>
+				<li>
+					<c:url value="/tiles/contact/1" var="tilesContactDetailUrl" />
+					<a href="${tilesContactDetailUrl}">/tiles/contact/1</a>
+				</li>				
+			</ul>
+		</li>
+		
+		<li>
 			<h3>Test exposure of static resources:</h3>
 			<ul>
 				<li>

@@ -1,8 +1,5 @@
 package be.rd.beans;
 
-import java.util.Date;
-import java.util.Locale;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,12 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.Version;
+import javax.validation.constraints.Size;
 
-import org.springframework.format.datetime.DateFormatter;
+import org.hibernate.annotations.Type;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.joda.time.DateTime;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 @Table(name = "contact")
@@ -27,18 +27,15 @@ public class Contact {
 	private int version;
 	private String firstName;
 	private String lastName;
-	private Date birthDate;
+	private DateTime birthDate;
 	private String description;
 	private byte[] photo;
-
-	public Contact() {
-	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	public Long getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(Long id) {
@@ -48,38 +45,43 @@ public class Contact {
 	@Version
 	@Column(name = "VERSION")
 	public int getVersion() {
-		return this.version;
+		return version;
 	}
 
 	public void setVersion(int version) {
 		this.version = version;
 	}
 
+	@NotEmpty(message="{validation.firstname.NotEmpty.message}")
+	@Size(min=3, max=60, message="{validation.firstname.Size.message}")
 	@Column(name = "FIRST_NAME")
 	public String getFirstName() {
-		return this.firstName;
+		return firstName;
 	}
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
+	@NotEmpty(message="{validation.lastname.NotEmpty.message}")
+	@Size(min=1, max=40, message="{validation.lastname.Size.message}")
 	@Column(name = "LAST_NAME")
 	public String getLastName() {
-		return this.lastName;
+		return lastName;
 	}
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-	@Temporal(TemporalType.DATE)
 	@Column(name = "BIRTH_DATE")
-	public Date getBirthDate() {
-		return this.birthDate;
+	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+	@DateTimeFormat(iso = ISO.DATE)
+	public DateTime getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(DateTime birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -87,13 +89,14 @@ public class Contact {
 	public String getDescription() {
 		return description;
 	}
-	
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	@Basic(fetch=FetchType.LAZY)
-	@Lob @Column(name = "PHOTO")
+
+	@Basic(fetch = FetchType.LAZY)
+	@Lob
+	@Column(name = "PHOTO")
 	public byte[] getPhoto() {
 		return photo;
 	}
@@ -101,17 +104,19 @@ public class Contact {
 	public void setPhoto(byte[] photo) {
 		this.photo = photo;
 	}
-	
+
 	@Transient
-	public String getBirthdayAsString(){
-		if(birthDate == null){
-			return "";
-		}
-		return new DateFormatter("yyyy-MM-dd").print(birthDate, Locale.ENGLISH);
+	public String getBirthdayAsString() {
+		String birthDateString = "";
+		if (birthDate != null)
+			birthDateString = org.joda.time.format.DateTimeFormat.forPattern(
+					"yyyy-MM-dd").print(birthDate);
+		return birthDateString;
 	}
-	
+
 	public String toString() {
 		return "Contact - Id: " + id + ", First name: " + firstName
-				+ ", Last name: " + lastName + ", Birthday: " + birthDate;
+				+ ", Last name: " + lastName + ", Birthday: " + birthDate
+				+ ", Description: " + description;
 	}
 }
