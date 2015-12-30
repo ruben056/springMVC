@@ -52,23 +52,24 @@ $ mvn jetty:run
 ```
 *hint: if you prefer starting the server from within Eclipse you can specify a run configuration in Eclipse for this ....*
 
-### Test using _Curl_
+### Test Rest services using _Curl_
  * when running on tomcat or you chose `run on server`
 ```shell
-$ curl -u remote:remote -v -H "Accept: application/xml" http://localhost:8080/SpringRestfullWSTest/contact/listdata
+$ curl -u remote:remote -v -H "Accept: application/xml" http://localhost:8080/springMVC/rest/contact/listdata
 ```
 ```shell
-$ curl -u remote:remote -v -H "Accept: application/json" http://localhost:8080/SpringRestfullWSTest/contact/listdata
-```
- * when runnin on jetty via maven the context root is not mentioned in the url:
-```shell
-$ curl -u remote:remote -v -H "Accept: application/xml" http://localhost:8080/contact/listdata
-```
-```shell
-$ curl -u remote:remote -v -H "Accept: application/json" http://localhost:8080/contact/listdata  
+$ curl -u remote:remote -v -H "Accept: application/json" http://localhost:8080/springMVC/rest/contact/listdata
 ```
 
-### Test restfull services using Springs _Resttemplate_
+ * when runnin on jetty via maven the context root is not mentioned in the url:
+```shell
+$ curl -u remote:remote -v -H "Accept: application/xml" http://localhost:8080/rest/contact/listdata
+```
+```shell
+$ curl -u remote:remote -v -H "Accept: application/json" http://localhost:8080/rest/contact/listdata
+```
+
+### Test rest services using Springs _Resttemplate_
 * just run the maven test:
 ```shell
 $	mvn test
