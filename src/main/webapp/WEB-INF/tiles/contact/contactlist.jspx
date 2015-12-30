@@ -15,6 +15,12 @@
 	
 	<spring:url value="/tiles/contact" var="showContactDetailUrl"/>
 	
+	<c:if test="${not empty message }">
+		<div class="${message.type }">
+			${message.message }
+		</div>
+	</c:if>
+	
 	<h1>${lblContactListing }</h1>
 	<c:if test="${not empty contacts}">
 		<table>
