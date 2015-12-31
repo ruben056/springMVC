@@ -5,7 +5,7 @@
 		http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
 
-    <display-name>SpringRestfullWSTest</display-name>
+    <display-name>springMVC</display-name>
     
    <!--
 		- Location of the XML file that defines the root application context.
