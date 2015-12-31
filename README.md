@@ -22,10 +22,39 @@ Some basic http security is present from wayback for the restfull  urls.
 Todo Describe (jsr 303 annotations on entity and controller operations)
 
 ## I18n
-TODO describe (i18nReloadableResourceBundle as messageSource)
+In some bullet points:
+* property files are created per "locale" in for instance WEB-INF/i18n:
+ * application.properties / application_nl_BE.properties/ application_fr_FR.properties /...
+ * messages.properties / messages_nl_BE.properties/ messages_fr_FR.properties /...
+
+
+* there is some config in the dispatcher servlet config
+
+ * beans:
+
+    * *org.springframework.context.support.ReloadableResourceBundleMessageSource* --> this one has a param which points to the property files: `p:basenames="WEB-INF/i18n/messages,WEB-INF/i18n/application"`
+    * *org.springframework.web.servlet.i18n.CookieLocaleResolver*
+
+ * interceptor
+    * *org.springframework.web.servlet.i18n.LocaleChangeInterceptor*    
 
 # Theming
-TODO describe
+In some bullet points:
+* property files are created in WEB-INF/classes:
+  * standard_theme.properties for instance `styleSheet=view/resources/styles/standard.css`
+  * dev_theme.properties
+* there is some config in the dispatcher servlet config
+ * beans:
+
+    * *org.springframework.ui.context.support.ResourceBundleThemeSource* (reads the properties as messageSource)
+    * *org.springframework.web.servlet.theme.CookieThemeResolver*
+
+ * interceptor
+
+  * *org.springframework.web.servlet.theme.ThemeChangeInterceptor*
+
+* in view (jspx)
+  * the messagesource is used to resolve the name of the stylesheet to use `<spring:theme code="styleSheet" var="app_css" />`
 
 ## Views
 * view/*
@@ -80,3 +109,8 @@ $	mvn test
 Go to following page and you'll get an overview of the availabl endpoints:
 * http://localhost:8080/index.jsp
 No automated test yet.  
+
+
+### Known issues (todos?)
+ * When the webapp is run as a contextroot for instance tomcat uses name of the war as default contextroot then the security related urls don't all work (they are not all relatively resolved it seems)
+ * ...
